@@ -3,6 +3,10 @@ import './ExpensesFilter.css';
 
 function ExpensesFilter (props) {
 
+
+  
+
+
    function passFilterData(event){
       props.onFilterChange(event.target.value);
    }

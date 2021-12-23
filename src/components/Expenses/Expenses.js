@@ -1,4 +1,4 @@
-import ExpenseItem from "./ExpenseItem.js";
+import ExpensesList from "./ExpensesList.js";
 import "./Expenses.css";
 import Card from "../UI/Card.js";
 import ExpensesFilter from "./ExpensesFilter.js";
@@ -10,11 +10,13 @@ function Expenses(props) {
     yearChange(filter);
   }
 
-  let a = parseInt(selectYear);
+  let filterYear = parseInt(selectYear);
   
-  let filteredExpense = [];
 
-  filteredExpense = props.expense.filter(expense => {return expense.date.getFullYear() === a; });
+
+  
+
+  //note that below is an additional attempt that I have made:
 
   /*for (let i = 0; i < props.expense.length; i++) {
     let expenseYear = props.expense[i].date.getFullYear()
@@ -28,23 +30,17 @@ function Expenses(props) {
 
   //I simply have to go through each object and if they are within the date range make sure they get mentioned
 
+
   return (
-    <div>
+    <li>
       <Card className="expenses">
         <ExpensesFilter
           selected={selectYear}
           onFilterChange={FilterChange}
         ></ExpensesFilter>
-        {filteredExpense.map((expense) => (
-          <ExpenseItem
-            title={expense.title}
-            price={expense.price}
-            date={expense.date}
-            key={expense.id}
-          />
-        ))}
+        <ExpensesList filteredExpense={props.expense} a={filterYear}></ExpensesList>
       </Card>
-    </div>
+    </li>
   );
 }
 
