@@ -14,7 +14,7 @@ function ExpenseForm(props) {
 
     let expenseLog = {
       title: enteredTitleState,
-      amount: enteredAmountState,
+      price: enteredAmountState,
       date: new Date(enteredDateState),
     };
     
@@ -32,8 +32,10 @@ function ExpenseForm(props) {
     SetEnteredTitle(event.target.value);
   }
   function amountChangeHandler(event) {
-    console.log(event.target.value);
-    SetEnteredAmount(event.target.value);
+    
+    var price = parseInt(event.target.value, 10)
+    SetEnteredAmount(price);
+    console.log("Hi " + event.target.value);
   }
   function dateChangeHandler(event) {
     console.log(event.target.value);
@@ -50,9 +52,8 @@ function ExpenseForm(props) {
         <div className="new-expense__control">
           <label>Amount</label>
           <input
-            type="number"
-            min="0.01"
-            step="0.01"
+            type="text"
+            min='0.01'
             value={enteredAmountState}
             onChange={amountChangeHandler}
           />
