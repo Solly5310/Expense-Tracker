@@ -3,6 +3,7 @@ import "./Expenses.css";
 import Card from "../UI/Card.js";
 import ExpensesFilter from "./ExpensesFilter.js";
 import { useState } from "react";
+import ExpensesChart from "./ExpensesChart.js"
 
 function Expenses(props) {
   let [selectYear, yearChange] = useState("2022");
@@ -12,10 +13,6 @@ function Expenses(props) {
 
   let filterYear = parseInt(selectYear);
   
-
-
-  
-
   //note that below is an additional attempt that I have made:
 
   /*for (let i = 0; i < props.expense.length; i++) {
@@ -37,7 +34,8 @@ function Expenses(props) {
         <ExpensesFilter
           selected={selectYear}
           onFilterChange={FilterChange}
-        ></ExpensesFilter>
+        ></ExpensesFilter >
+        <ExpensesChart expenses ={props.expense} a={filterYear}/>
         <ExpensesList filteredExpense={props.expense} a={filterYear}></ExpensesList>
       </Card>
     </li>
