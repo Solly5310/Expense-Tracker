@@ -1,8 +1,11 @@
 import "./NewExpense.css";
 import ExpenseForm from "./ExpenseForm.js";
 import {useState} from 'react'
+import React from 'react';
+
 function NewExpense(props) {
   
+
    function FormSubmission(expense) {
    
       let newExpense={
@@ -10,21 +13,22 @@ function NewExpense(props) {
          id: Math.random()
       };
    props.onExpenseSubmit(newExpense)
-   buttonState(1)
+   buttonState(newExpenseSubmit)
   };
 
   function cancelButton() {
-    buttonState(1)
+    buttonState(newExpenseSubmit)
   }
   
+  let submitForm = false
+  let newExpenseSubmit = true
+  let [buttonType, buttonState] = useState(newExpenseSubmit);
 
-  let [buttonType, buttonState] = useState(1);
-
-  if(buttonType === 1)
+  if(buttonType === newExpenseSubmit)
   {
     return(
       <div className= "new-expense">
-        <button onClick={() => buttonState(2)}>New Expense</button>
+        <button onClick={() => buttonState(submitForm)}>New Expense</button>
       </div>
     )
   }

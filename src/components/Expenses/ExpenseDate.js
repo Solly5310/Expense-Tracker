@@ -1,6 +1,6 @@
 import "./ExpenseDate.css";
 import Card from "../UI/Card.js"
-
+import React from 'react';
 
 function ExpenseDate(props) {
   let year = props.date.toLocaleString("en-US", { year: "numeric" });

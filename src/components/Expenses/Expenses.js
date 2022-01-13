@@ -4,6 +4,7 @@ import Card from "../UI/Card.js";
 import ExpensesFilter from "./ExpensesFilter.js";
 import { useState } from "react";
 import ExpensesChart from "./ExpensesChart.js"
+import React from 'react';
 
 function Expenses(props) {
   let [selectYear, yearChange] = useState("2022");

@@ -1,5 +1,6 @@
 import ChartBar from "./ChartBar.js";
 import "./Chart.css";
+import React from 'react';
 
 function Chart(props) {
    

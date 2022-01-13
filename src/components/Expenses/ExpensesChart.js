@@ -1,4 +1,5 @@
 import Chart from "../Chart/Chart.js"
+import React from 'react';
 
 function ExpensesChart (props)
 {

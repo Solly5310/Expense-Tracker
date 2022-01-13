@@ -1,6 +1,6 @@
 import "./ExpenseForm.css";
 import { useState } from "react";
-
+import React from 'react';
 
 
 function ExpenseForm(props) {
@@ -70,7 +70,7 @@ function ExpenseForm(props) {
         </div>
       </div>
       <div className="new-expense__actions">
-        <button type="button" onClick={props.cancel}>Cancel</button>
+        <button className="cancel_button" type="button" onClick={props.cancel}>Cancel</button>
         <button type="submit">Add Expense</button>
       </div>
     </form>
